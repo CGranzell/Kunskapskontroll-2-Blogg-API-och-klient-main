@@ -1,17 +1,41 @@
 /* Manage-post Christoffer */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .container-manage-post {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.container-manage-post a {
+.manage-post-link {
   align-self: flex-end;
+  margin-right: 20rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+  padding: 1rem;
+}
+.container-manage-post h1 {
+  align-self: center;
 }
 #table {
   border: 1px solid black;
+}
+th {
+  background-color: black;
+  color: white;
 }
 tr,
 th,
 td {
   border: 1px solid black;
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.container-manage-post-table {
+  place-self: center;
 }
