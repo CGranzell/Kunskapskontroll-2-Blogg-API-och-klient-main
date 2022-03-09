@@ -16,7 +16,7 @@ async function managePuns() {
 				<td>${post.author}</td>
 				<td>${post.date}</td>
 				<td>
-          <a href="#">Update</a>
+          <a href="update-post.html?id=${post._id}">Update</a>
           <a href="#" class="delete-post" data-id="${post._id}">Delete</a>
         </td>
 				
