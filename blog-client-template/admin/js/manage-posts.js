@@ -14,7 +14,13 @@ async function managePuns() {
       <tr>
 				<td>${post.title}</td>
 				<td>${post.author}</td>
-				<td>${post.date}</td>
+				<td>${new Date(post.date).toLocaleDateString()}
+          <br>
+          ${
+            new Date(post.date).getHours() +
+            ":" +
+            new Date(post.date).getSeconds()
+          }</td>
 				<td>
           <a href="update-post.html?id=${post._id}">Update</a>
           <a href="#" class="delete-post" data-id="${post._id}">Delete</a>
