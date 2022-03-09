@@ -1,0 +1,17 @@
+/* Manage-post Christoffer */
+.container-manage-post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container-manage-post a {
+  align-self: flex-end;
+}
+#table {
+  border: 1px solid black;
+}
+tr,
+th,
+td {
+  border: 1px solid black;
+}
