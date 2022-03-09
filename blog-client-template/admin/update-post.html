@@ -2,10 +2,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update post</title>
     <link rel="stylesheet" href="css/style.css">
+	<!-- Infogar css nedan tills vidare -->
+	<style>
+	input {
+	width: 51em; 
+	}
+	</style>
+	
 </head>
 <body>
+<div id="container">
+	<form id="update-post">
+	
+        <h1>Update post</h1>
+		
+			<label for="title">Title</label><br>
+			<input type="text" id="title" name="title"><p></p>
+			
+			<label for="author">Author</label><br>
+			<input type="text" id="author" name="author" width="7em"><p></p>
+                    
+			 <label for="content">Content</label><br>
+            <textarea name="content" id="content" cols="90" rows="10"> </textarea>
+			<p> </p>
+						
+            <input type="submit" value="Update">
+           <!-- <a href="index.html">&#x2190; back</a> -->
+      </form>
+ </div>
     <script src="js/update-post.js"></script>
 </body>
 </html>
+
+
+    
