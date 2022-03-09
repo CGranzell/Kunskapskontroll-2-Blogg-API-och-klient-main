@@ -17,7 +17,7 @@ async function managePuns() {
 				<td>${post.date}</td>
 				<td>
           <a href="#">Update</a>
-          <a href="#">Delete</a>
+          <a href="#" class="delete-post" data-id="${post._id}">Delete</a>
         </td>
 				
 			</tr>
@@ -27,5 +27,24 @@ async function managePuns() {
     document.getElementById("table-body").innerHTML = html;
   } catch (error) {
     console.log(error);
+  }
+
+  const deletePostLink = document.getElementsByClassName("delete-post");
+  console.log(deletePostLink);
+
+  for (let link of deletePostLink) {
+    console.log(link);
+    link.addEventListener("click", async function (e) {
+      e.preventDefault();
+      const postId = e.target.dataset.id;
+      try {
+        await fetch(`http://localhost:5000/posts/${postId}`, {
+          method: "DELETE",
+        });
+        e.target.parentNode.parentNode.remove();
+      } catch (error) {
+        console.log(error);
+      }
+    });
   }
 }
