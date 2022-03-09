@@ -22,8 +22,12 @@ async function managePuns() {
             new Date(post.date).getSeconds()
           }</td>
 				<td>
-          <a href="update-post.html?id=${post._id}">Update</a>
-          <a href="#" class="delete-post" data-id="${post._id}">Delete</a>
+          <a href="update-post.html?id=${
+            post._id
+          }" class="update">Update<span id="update-symbol">&#8634</span></a>
+          <a href="#" class="delete-post" data-id="${
+            post._id
+          }">Delete<span id="X">&#10006</span></a>
         </td>
 				
 			</tr>
