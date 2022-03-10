@@ -16,7 +16,7 @@
 							center: true,
 							padding: {
 								md: '5rem',
-                                lg:'12rem'
+								lg: '12rem',
 							},
 						},
 					},
@@ -33,9 +33,10 @@
 			</div>
 			<div class="p-5 mt-4">
 				<p class="text-5xl font-bold">New post</p>
+				<p class="text-red-700 text-lg  errorHandler">   </p>
 			</div>
 
-			<form class="px-5" name="newpost" onsubmit="newPost">
+			<form class="px-5" name="myForm" >
 				<div class="mb-3">
 					<label class="text-lg" for="title"> Title </label>
 
@@ -74,28 +75,28 @@
 						<input
 							type="checkbox"
 							id="Economics"
-							name="Economics"
 							value="Economics"
+							name="tag"
 						/>
 						<label class="text-lg" for="Economics">Economics</label>
 						<br />
 						<input
 							type="checkbox"
 							id="Politics"
-							name="Politics"
 							value="Politics"
+							name="tag"
 						/>
 						<label class="text-lg" for="Politics">Politics</label>
 						<br />
-						<input type="checkbox" id="Sport" name="Sport" value="Sport" />
-						<label class="text-lg" for="Sport">Sport</label> <br />
-						<input type="checkbox" id="Art" name="Art" value="Art" />
+						<input type="checkbox" name="tag"  id="Sport" value="Sport" />
+						<label class="text-lg  " for="Sport">Sport</label> <br />
+						<input type="checkbox" name="tag"  id="Art"  value="Art" />
 						<label class="text-lg" for="Art">Art</label> <br />
-						<input type="checkbox" id="Food" name="Food" value="Food" />
+						<input type="checkbox" name="tag"  id="Food"  value="Food" />
 						<label class="text-lg" for="Food">Food</label> <br />
-						<input type="checkbox" id="Travel" name="Travel" value="Travel" />
+						<input type="checkbox" name="tag"  id="Travel"  value="Travel" />
 						<label class="text-lg" for="Travel">Travel</label> <br />
-						<input type="checkbox" id="Cars" name="Cars" value="Cars" />
+						<input type="checkbox" name="tag"  id="Cars" value="Cars" />
 						<label class="text-lg" for="Cars">Cars</label> <br />
 					</div>
 				</div>
