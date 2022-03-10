@@ -1,28 +1,39 @@
 window.onload = function() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+    const queryString = window.location.search; //  ?id=6229f059f1d1df664039fdd1 (olika ID beroende på vilket inlägg man trycker på)
+    
+    const urlParams = new URLSearchParams(queryString);  // metod som används för att arbeta med querystrings
+    console.log(urlParams);
+    // fetchPun(urlParams.get(id));  //Nu kickar du igång funktionen
+    console.log(urlParams.get('id'))
 }
-/*
+
+
+
 async function fetchPun(urlParams) {
     try {
-        const response = await fetch(`http://localhost:5000/posts/${urlParams.get('id')}`)
-        const pun = await response.json();
-
-        document.getElementById('content').innerText = pun.content;
+        const response = await fetch(`http://localhost:5000/posts/${urlParams.get('id')}`)  //ID för inlägget är: 6229f059f1d1df664039fdd1
+        const post = await response.json();
+        
+                
+        document.getElementById('content').innerText = post.content; 
+        
+        
     } catch(error) {
         console.log(error)
     }
+    
 }
 
-function updatePunEvent(urlParams) {
-    const form = document.getElementById('update-post');
+   function updatePunEvent(urlParams) {
+    const form = document.getElementById(update-post);
+    
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         const formData = new FormData(e.target) // e.target is the form, in this case
         console.log(formData);
         const JSONString = {
-            content: formData.get('content')
+            content: formData.get('content') //content stod här innan
         };
         console.log(JSON.stringify(JSONString));
 
@@ -45,4 +56,5 @@ function updatePunEvent(urlParams) {
         }
     })
 }
-  */
+
+  
