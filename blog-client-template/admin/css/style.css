@@ -3,12 +3,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: azure;
+  background-color: #7ed3fc;
 }
 hr {
   width: 58%;
-  height: 3px;
-  background-color: black;
+  height: 2px;
+  background-color: white;
 }
 .container-manage-post {
   display: flex;
@@ -23,7 +23,8 @@ hr {
   padding: 1rem;
   border: 3px solid black;
   border-radius: 2rem;
-  background-color: aqua;
+  /* background-color: rgba(226, 247, 36, 0.973); */
+  background-color: white;
   color: rgb(23, 28, 32);
 }
 .container-manage-post h1 {
@@ -44,8 +45,11 @@ hr {
   padding: 1rem;
   border: 3px solid black;
   border-radius: 2rem;
-  background-color: aqua;
+  background-color: green;
   color: rgb(23, 28, 32);
+}
+.delete-post {
+  background-color: red;
 }
 #table {
   border: 1px solid black;
@@ -54,6 +58,7 @@ th {
   background-color: black;
   color: white;
 }
+
 tr,
 th,
 td {
@@ -63,7 +68,9 @@ td {
   font-size: 1.4rem;
   text-decoration: none;
 }
-
+tbody {
+  background-color: aliceblue;
+}
 .container-manage-post-table {
   place-self: center;
 }
