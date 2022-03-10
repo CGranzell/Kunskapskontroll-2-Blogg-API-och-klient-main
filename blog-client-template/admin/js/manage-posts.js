@@ -14,6 +14,7 @@ async function managePuns() {
       <tr>
 				<td>${post.title}</td>
 				<td>${post.author}</td>
+        <td>${post.tags}</td>
 				<td>${new Date(post.date).toLocaleDateString()}
           <br>
           ${
