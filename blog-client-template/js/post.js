@@ -25,7 +25,7 @@ async function showPost() {
     // Bestämmer html struktur
     // Skriver ut datan via html på sidan
     document.getElementById("mattias2").innerHTML = `
-         <div>
+         <div class="specific-post">
         <h1>${urlParams.get("title")}</h1>
         <p>${urlParams.get("content")}</p>
         <p>${urlParams.get("author")}</p>

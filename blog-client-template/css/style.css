@@ -157,3 +157,8 @@ ul li.checked::before {
   text-align: center;
   width: 50%;
 }
+
+/* Christoffers kod */
+.specific-post {
+  border: 1px solid #000;
+}
