@@ -10,8 +10,10 @@ async function showPosts() {
 
     let html = "";
     for (let post of posts) {
-      console.log(post);
-
+      // console.log(post);
+      console.log(post.tags);
+      let emptyArray = [];
+      emptyArray += post.tags;
       html += `
       <div class="testing-mathias">
       
@@ -19,7 +21,7 @@ async function showPosts() {
         <p>${post.content}</p>
         <p>${post.author}</p>
         <p>${post.tags}</p>
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}">Read More >></a>
+        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}">Read More >></a>
        </div>
 
       `;

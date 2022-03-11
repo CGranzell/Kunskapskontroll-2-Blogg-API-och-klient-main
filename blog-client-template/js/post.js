@@ -10,6 +10,7 @@ console.log(urlParams.get("id"));
 console.log(urlParams.get("title"));
 console.log(urlParams.get("content"));
 console.log(urlParams.get("author"));
+console.log(urlParams.get("tags"));
 
 async function showPost() {
   try {
@@ -24,6 +25,7 @@ async function showPost() {
         <h1>${urlParams.get("title")}</h1>
         <p>${urlParams.get("content")}</p>
         <p>${urlParams.get("author")}</p>
+        <p>${urlParams.get("tags")}</p>
         </div>
     `;
   } catch (error) {
