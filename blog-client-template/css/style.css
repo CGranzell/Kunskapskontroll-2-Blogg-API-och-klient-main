@@ -14,13 +14,18 @@ ul {
   padding: 0;
 }
 body {
-  background-color: whitesmoke;
+  background-color: #7ed3fc;
 }
+hr {
+    width: 50%;
+    height: 2px;
+    background-color: aliceblue;
+  }
 h2 {
   font-family: 'Times New Roman', cursive;
   font-size: 32px;
   font-weight: bold;
-  color: #000;
+  color: black;
 }
 h3 {
     text-align: center;
@@ -53,7 +58,7 @@ ul li {
 
 
 ul li:nth-child(odd) {
-  background: whitesmoke;
+  background: black;
   
 }
 
@@ -98,9 +103,9 @@ ul li.checked::before {
 
 
 .header {
-  background-color: whitesmoke;
+  background-color: #7ed3fc;
   padding: 30px 40px;
-  color: black;
+  color: aliceblue;
   text-align: center;
   
 }
@@ -115,7 +120,8 @@ ul li.checked::before {
     width:50%;
     }
     .mattias:hover{
-    background:skyblue;
+    background:black;
+    color: aliceblue;
     height:500px;
     width:50%;
     }
@@ -124,7 +130,8 @@ ul li.checked::before {
     width:50%;
     }
     .mattias1:hover{
-    background:skyblue;
+    background:black;
+    color: aliceblue;
     height:500px;
     width:50%;
     }
@@ -133,7 +140,8 @@ ul li.checked::before {
     width:50%;
     }
     .mattias2:hover{
-    background: skyblue;
+    background:black;
+    color: aliceblue;
     height:500px;
     width:50%;  
     }
@@ -142,7 +150,8 @@ ul li.checked::before {
         width: 50%;
         }
         .mattias3:hover{
-        background: skyblue;
+        background:black;
+        color: aliceblue;
         height:500px;
         width:50%;  
         }
