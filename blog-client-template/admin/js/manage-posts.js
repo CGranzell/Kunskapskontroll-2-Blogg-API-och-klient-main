@@ -25,10 +25,10 @@ async function managePuns() {
 				<td>
           <a href="update-post.html?id=${
             post._id
-          }" class="update">Update<span id="update-symbol">&#8634</span></a>
+          }" class="update">Update<span>&#8634</span></a>
           <a href="#" class="delete-post" data-id="${
             post._id
-          }">Delete<span id="X">&#10006</span></a>
+          }">Delete<span>&#10006</span></a>
         </td>
 
 			</tr>
@@ -41,10 +41,10 @@ async function managePuns() {
   }
 
   const deletePostLink = document.getElementsByClassName("delete-post");
-  console.log(deletePostLink);
+  // console.log(deletePostLink);
 
   for (let link of deletePostLink) {
-    console.log(link);
+    // console.log(link);
     link.addEventListener("click", async function (e) {
       e.preventDefault();
       const postId = e.target.dataset.id;

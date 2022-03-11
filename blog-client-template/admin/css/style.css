@@ -7,7 +7,7 @@ body {
 }
 hr {
   width: 58%;
-  height: 2px;
+  height: 1px;
   background-color: white;
 }
 .container-manage-post {
@@ -20,9 +20,9 @@ hr {
   margin-left: 45%;
   font-size: 1.4rem;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.3rem;
   border: 3px solid black;
-  border-radius: 2rem;
+  border-radius: 1rem;
   /* background-color: rgba(226, 247, 36, 0.973); */
   background-color: white;
   color: rgb(23, 28, 32);
@@ -30,27 +30,22 @@ hr {
 .container-manage-post h1 {
   align-self: center;
 }
-#plus,
-#arrow,
-#X,
-#update-symbol {
-  font-size: 2rem;
-  font-weight: 900;
-  padding: 0.7rem 0.7rem;
-}
+
 .delete-post,
 .update {
-  font-size: 1.4rem;
+  margin-left: 4%;
+  font-size: 1.6rem;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.2rem;
   border: 3px solid black;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background-color: green;
   color: rgb(23, 28, 32);
 }
 .delete-post {
   background-color: red;
 }
+
 #table {
   border: 1px solid black;
 }
@@ -63,11 +58,12 @@ tr,
 th,
 td {
   border: 1px solid black;
-  width: 20rem;
-  height: 5rem;
+  width: 21rem;
+  height: 5.5rem;
   font-size: 1.4rem;
   text-decoration: none;
 }
+
 tbody {
   background-color: aliceblue;
 }
