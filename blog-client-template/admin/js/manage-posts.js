@@ -7,7 +7,7 @@ async function managePuns() {
     const response = await fetch("http://localhost:5000/posts");
     console.log(response);
     const posts = await response.json();
-    console.log(posts);
+    console.log('posts are ' + ' ' + posts);
     let html = "";
     for (let post of posts) {
       html += `
@@ -25,14 +25,14 @@ async function managePuns() {
 				<td>
           <a href="update-post.html?id=${
             post._id
-          }" class="update">Update<span id="update-symbol">&#8634</span></a>
+          }" class="update">Update<span>&#8634</span></a>
           <a href="#" class="delete-post" data-id="${
             post._id
-          }">Delete<span id="X">&#10006</span></a>
+          }">Delete<span>&#10006</span></a>
         </td>
-				
+
 			</tr>
-      
+
       `;
     }
     document.getElementById("table-body").innerHTML = html;
@@ -41,10 +41,10 @@ async function managePuns() {
   }
 
   const deletePostLink = document.getElementsByClassName("delete-post");
-  console.log(deletePostLink);
+  // console.log(deletePostLink);
 
   for (let link of deletePostLink) {
-    console.log(link);
+    // console.log(link);
     link.addEventListener("click", async function (e) {
       e.preventDefault();
       const postId = e.target.dataset.id;

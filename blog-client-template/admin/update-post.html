@@ -8,7 +8,7 @@
 	 
 		<style>
 	input {
-	width: 51em; 
+	width: 51em;
 	}
 	
 	.update-page {
@@ -24,27 +24,35 @@
 	}
 		
 	</style>
-	
-	
-</head>
 
-	<body class="update-page">
-	<div id="container">
-	<form id="update-post">
 	
+
 		
+
+
+</head>
+<body>
+<div id="container">
+	<p class="errorHandler"></p>
+	<form id="update-post">
+
+
         <h1>Update post</h1>
-		
+
 			<label for="title">Title</label><br>
 			<input type="text" id="title" name="title"><p></p>
-			
+
 			<label for="author">Author</label><br>
 			<input type="text" id="author" name="author" width="7em"><p></p>
-                    
+
 			 <label for="content">Content</label><br>
             <textarea name="content" id="content" cols="90" rows="10"> </textarea>
-			<p> </p>
-						
+
+			<ul class="tags">
+
+			</ul>
+			<br/>
+
             <input type="submit" value="Update">
 			 <div id="back-position">
 				 <a href="index.html"> <p></p> &#x2190; back</a> 
@@ -152,6 +160,3 @@
     <script src="js/update-post.js"></script>
 </body>
 </html>
-
-
-    
