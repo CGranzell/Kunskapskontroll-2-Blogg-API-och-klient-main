@@ -1,103 +1,152 @@
 
     box-sizing: border-box;
+}
+li {
+  font-family: 'Times New Roman', cursive;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
   }
-  li {
-    font-family: 'Times New Roman', cursive;
-    font-size: 14px;
-    font-weight: normal;
-    color: #000;
-    text-align: left;
-    }
-  
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-color: whitesmoke;
-  }
-  h2 {
-    font-family: 'Times New Roman', cursive;
-    font-size: 32px;
-    font-weight: bold;
-    color: #000;
-  }
-  h3 {
-      text-align: center;
-      font-size: 22;
-  }
-  h4 {
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: whitesmoke;
+}
+h2 {
+  font-family: 'Times New Roman', cursive;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+h3 {
     text-align: center;
     font-size: 22;
+}
+h4 {
+  text-align: center;
+  font-size: 22;
 }
 h5 {
-    text-align: center;
-    font-size: 22;
+  text-align: center;
+  font-size: 22;
 }
 h6 {
-    text-align: center;
-    font-size: 22;
+  text-align: center;
+  font-size: 22;
 }
-  
-  ul li {
+
+ul li {
     cursor: pointer;
     position: relative;
     padding: 14px 12px 14px 40px;
     background: whitesmoke;
     font-size: 18px;
     transition: 0.2s;
-  
     
-  }
+
   
+}
+
+
+ul li:nth-child(odd) {
+  background: whitesmoke;
   
-  ul li:nth-child(odd) {
-    background: whitesmoke;
-  }
+}
+
+
+ul li:hover {
+  background: whitesmoke;
+}
+
+
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 1 3px 3px 1;
+  top: 112px;
+  left: 18px;
+  transform: rotate(50deg);
+  height: 20px;
+  width: 10px;
+}
+
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 14px 10px 14px;
+}
+
+.close:hover {
+  background-color: whitesmoke;
+  color: whitesmoke;
+}
+
+
+.header {
+  background-color: whitesmoke;
+  padding: 30px 40px;
+  color: black;
+  text-align: center;
   
-  
-  ul li:hover {
-    background: lightskyblue;
-  }
-  
-  
-  ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-  }
-  
-  
-  ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 1 3px 3px 1;
-    top: 112px;
-    left: 18px;
-    transform: rotate(50deg);
-    height: 20px;
-    width: 10px;
-  }
-  
-  
-  .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px 14px 10px 14px;
-  }
-  
-  .close:hover {
-    background-color: black;
-    color: black;
-  }
-  
-  
-  .header {
-    background-color: whitesmoke;
-    padding: 30px 40px;
-    color: black;
-    text-align: center;
-  }
+}
+
+#myUL li{display:inline-block;list-style-type:none;
+    border-radius:20px;
+    overflow:hidden;
+    vertical-align:top;
+    }
+    .mattias{
+    height:48px;
+    width:50%;
+    }
+    .mattias:hover{
+    background:skyblue;
+    height:500px;
+    width:50%;
+    }
+    .mattias1{
+    height:48px;
+    width:50%;
+    }
+    .mattias1:hover{
+    background:skyblue;
+    height:500px;
+    width:50%;
+    }
+    .mattias2{
+    height:48px;
+    width:50%;
+    }
+    .mattias2:hover{
+    background: skyblue;
+    height:500px;
+    width:50%;  
+    }
+    .mattias3{
+        height:48px;
+        width: 50%;
+        }
+        .mattias3:hover{
+        background: skyblue;
+        height:500px;
+        width:50%;  
+        }
+
+    #myUL {
+        text-align: center;
+    }
