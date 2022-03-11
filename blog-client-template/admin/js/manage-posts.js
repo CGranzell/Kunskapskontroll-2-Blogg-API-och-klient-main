@@ -7,7 +7,7 @@ async function managePuns() {
     const response = await fetch("http://localhost:5000/posts");
     console.log(response);
     const posts = await response.json();
-    console.log(posts);
+    console.log('posts are ' + ' ' + posts);
     let html = "";
     for (let post of posts) {
       html += `
@@ -30,9 +30,9 @@ async function managePuns() {
             post._id
           }">Delete<span id="X">&#10006</span></a>
         </td>
-				
+
 			</tr>
-      
+
       `;
     }
     document.getElementById("table-body").innerHTML = html;
