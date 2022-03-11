@@ -1,11 +1,13 @@
-window.onload = function() {
+//window.onload = function() {
     const queryString = window.location.search; //  ?id=6229f059f1d1df664039fdd1 (olika ID beroende på vilket inlägg man trycker på)
     
     const urlParams = new URLSearchParams(queryString);  // metod som används för att arbeta med querystrings
     console.log(urlParams);
     // fetchPun(urlParams.get(id));  //Nu kickar du igång funktionen
-    console.log(urlParams.get('id'))
-}
+   
+    fetchPun(urlParams);
+    updatePunEvent(urlParams);
+
 
 
 
@@ -15,9 +17,9 @@ async function fetchPun(urlParams) {
         const post = await response.json();
         
                 
-        document.getElementById('content').innerText = post.content; 
-        
-        
+        console.log(document.getElementById('content-textarea').innerText = post.content);
+            
+      
     } catch(error) {
         console.log(error)
     }
