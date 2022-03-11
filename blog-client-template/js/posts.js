@@ -1,22 +1,26 @@
 window.onload = function () {
   showPosts();
 };
-
+// funktion som hämtar datan från databasen
 async function showPosts() {
   try {
+    //Gör anrop till databasen
     const response = await fetch("http://localhost:5000/posts");
     console.log(response);
+    // Får tillgång till datan
     const posts = await response.json();
-
+    // En tom variabel för att placera html i
     let html = "";
     for (let post of posts) {
-      // console.log(post);
-      console.log(post.tags);
+      // En tom array för att placera tags i
       let emptyArray = [];
+      // Placerar tags i den tomma arrayen
       emptyArray += post.tags;
+
+      // Bestämmer html struktur
+      //Skickar även in data till post.html
       html += `
       <div class="testing-mathias">
-      
       <h1>${post.title}</h1>
         <p>${post.content}</p>
         <p>${post.author}</p>
@@ -26,6 +30,7 @@ async function showPosts() {
 
       `;
     }
+    // Skriver ut datan via html på sidan
     document.getElementById("matias-index").innerHTML = html;
   } catch (error) {
     console.log(error);

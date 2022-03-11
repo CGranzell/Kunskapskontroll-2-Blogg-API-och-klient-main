@@ -6,13 +6,19 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Main container -->
     <div class="container-manage-post">
+      <!-- Länk till index.html -->
         <a href="../index.html" class="manage-post-link">Page <span>&#10142;</span></a>
         <hr>
         <h1>Handle blog posts</h1>
+        <!-- Länk till admin.html -->
         <a href="../admin/create-post.html" class="manage-post-link">Create new post<span>&#10010;</span></a>
+        <!-- Container för tabell -->
     <div class="container-manage-post-table">
+      <!-- Tabell  -->
       <table id="table">
+        <!-- Statisk information i tabel head -->
 		    <thead>
 			    <tr>
 				    <th>Title</th>
@@ -22,6 +28,7 @@
 				    <th>Action</th>
 			    </tr>
 		    </thead>
+        <!-- Dynamisk information från JS i table boy -->
 		    <tbody id="table-body"> </tbody>
        </div>
      </div>
