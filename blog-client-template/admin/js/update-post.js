@@ -28,7 +28,7 @@ window.onload = async function () {
 
 		let checked = post.tags;
 
-		if (checked) {
+		if (checked[0]) {
 			checked.map((item) => {
 				// Since the tags are changing, we create new elements and show them in the page
 				let container = document.createElement('li');
@@ -105,9 +105,11 @@ form.addEventListener('submit', async function (e) {
 	let formtags = e.target['tag'];
 	let updatedcheck = [];
 
-	formtags.forEach((element) => {
-		if (element.checked) updatedcheck = [...updatedcheck, element.value];
-	});
+    if(formtags){
+        formtags.forEach((element) => {
+            if (element.checked) updatedcheck = [...updatedcheck, element.value];
+        });
+    }
 
 	try {
 		const response = await fetch(`http://localhost:5000/posts/${blogId}`, {
