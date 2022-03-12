@@ -1,0 +1,102 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						container: {
+							center: true,
+							padding: {
+								md: '5rem',
+								lg: '12rem',
+							},
+						},
+					},
+				},
+			};
+		</script>
+	</head>
+	<body class="bg-sky-300">
+		<div class="container">
+			<div class="p-5 text-right">
+				<a href="/blog-client-template/index.html"> Blog page </a>
+
+				<hr class="mt-3" />
+			</div>
+			<div class="p-5 mt-4">
+				<p class="text-5xl font-bold">New post</p>
+				<p class="text-red-700 text-lg errorHandler"></p>
+			</div>
+
+			<form class="px-5" name="myForm">
+				<div class="mb-3">
+					<label class="text-lg" for="title"> Title </label>
+
+					<input class="w-full p-1 rounded" type="text" name="title" />
+				</div>
+				<div class="mb-3">
+					<label class="text-lg" for="author"> Author </label>
+
+					<input class="w-full p-1 rounded" type="text" name="author" />
+				</div>
+				<div class="mb-3">
+					<label class="text-lg" for="content"> Content </label>
+
+					<textarea
+						class="w-full p-1 rounded"
+						rows="5"
+						cols="70"
+						name="content"
+					></textarea>
+				</div>
+				<div class="mb-3">
+					<label class="text-lg" for="tags"> Tags </label>
+
+					<div class="bg-white p-3 rounded">
+						<input type="checkbox" value="Economics" name="tag" />
+						<label class="text-lg" for="Economics">Economics</label>
+						<br />
+						<input type="checkbox" value="Politics" name="tag" />
+						<label class="text-lg" for="Politics">Politics</label>
+						<br />
+						<input type="checkbox" name="tag" value="Sport" />
+						<label class="text-lg" for="Sport">Sport</label> <br />
+						<input type="checkbox" name="tag" value="Art" />
+						<label class="text-lg" for="Art">Art</label> <br />
+						<input type="checkbox" name="tag" value="Food" />
+						<label class="text-lg" for="Food">Food</label> <br />
+						<input type="checkbox" name="tag" value="Travel" />
+						<label class="text-lg" for="Travel">Travel</label> <br />
+						<input type="checkbox" name="tag" value="Cars" />
+						<label class="text-lg" for="Cars">Cars</label> <br />
+					</div>
+				</div>
+
+				<div class="my-7">
+					<button
+						class="bg-white w-full text-lg font-bold hover:text-xl p-1 rounded"
+						type="submit"
+					>
+						Create
+					</button>
+				</div>
+			</form>
+			<div class="text-center my-8">
+				<a class="text-lg hover:text-xl" href="./index.html">
+					<i class="fa fa-arrow-left"> </i>
+					Back
+				</a>
+			</div>
+		</div>
+
+		<script src="js/create-post.js"></script>
+	</body>
+</html>
