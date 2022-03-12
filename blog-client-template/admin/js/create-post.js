@@ -22,7 +22,8 @@ let postBlog = async (title, author, content, checked) => {
 		let res = await p.json();
 
 		// If we get a response, redirect user to admin/index.html
-		if (res) window.location.href = '../admin/';
+		//This bit was before:     if (res) window.location.href = '../admin/';
+		if (res) window.location.href = '../admin/index.html';
 
 	} catch (error) {
 		errorHandler.textContent = error;
