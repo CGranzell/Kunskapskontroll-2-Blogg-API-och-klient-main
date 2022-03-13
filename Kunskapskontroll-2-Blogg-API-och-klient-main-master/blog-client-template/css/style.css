@@ -1,5 +1,16 @@
 
 
+a { font-size: 1.0rem;
+  text-decoration: none;
+  padding: 0.3rem;
+  border: 3px solid black;
+  border-radius: 1rem;
+  background-color: white;
+  color: rgb(23, 28, 32);
+  
+
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -25,12 +36,7 @@ h2 {
   text-align: center;
 }
 
-
-#myUL {
-  text-align: center;
-}
-
-.testing-mathias {
+.testing-mattias {
   border: 1px solid black;
   text-align: center;
   width: 100%;
@@ -40,3 +46,4 @@ h2 {
 .specific-post {
   border: 1px solid #000;
 }
+

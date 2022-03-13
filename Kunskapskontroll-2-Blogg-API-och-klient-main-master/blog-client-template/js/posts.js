@@ -20,19 +20,20 @@ async function showPosts() {
       // Bestämmer html struktur
       //Skickar även in data till post.html
       html += `
-      <div class="testing-mathias">
+      <div class="testing-mattias">
       <h1>${post.title}</h1>
         <p>${post.content}</p>
         <p>${post.author}</p>
         <p>${post.tags}</p>
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}">Read More >></a>
+        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}">Read More <span>&#10142;</span></a>
        </div>
 
       `;
     }
     // Skriver ut datan via html på sidan
-    document.getElementById("matias-index").innerHTML = html;
+    document.getElementById("mattias-index").innerHTML = html;
   } catch (error) {
     console.log(error);
   }
 }
+ 
