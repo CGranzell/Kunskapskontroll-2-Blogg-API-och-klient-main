@@ -30,6 +30,7 @@ async function showPost() {
         <p>${urlParams.get('content')}</p>
         <p>${urlParams.get('author')}</p>
         <p>${urlParams.get('tags')}</p>
+		<p>${urlParams.get('date')}</p>
     {/8}
         </div>
     `;
