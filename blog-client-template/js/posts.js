@@ -16,6 +16,7 @@ async function showPosts() {
       let emptyArray = [];
       // Placerar tags i den tomma arrayen
       emptyArray += post.tags;
+      console.log(post.content.substring(0, 3));
 
       // Bestämmer html struktur
       //Skickar även in data till post.html
@@ -33,12 +34,18 @@ async function showPosts() {
             new Date(post.date).getSeconds()
           }</p>
         <p><strong>tags:</strong>${post.tags}</p>
-        <p>${post.content}</p>
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${
+        <p>${post.content.substring(0, 100) + "..."} 
+           <a href="post.html?id=${post._id}&title=${post.title}&content=${
         post.content
       }&author=${
         post.author
       }&tags=${emptyArray}" class="read-more-link">Read More <span>&#10142;</span></a>
+        
+        </p>
+
+
+
+      
         
        </div>
 
