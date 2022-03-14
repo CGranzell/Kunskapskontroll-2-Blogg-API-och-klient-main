@@ -3,12 +3,12 @@
 /*
 window.onload = function() {
     const queryString = window.location.search; //  ?id=6229f059f1d1df664039fdd1 (olika ID beroende på vilket inlägg man trycker på)
-    
+
     const urlParams = new URLSearchParams(queryString);  // metod som används för att arbeta med querystrings
     console.log(urlParams);
     console.log(urlParams.get('id'));
-    
-   
+
+
     fetchPun(urlParams); //Nu kickar du igång funktionen
    // updatePunEvent(urlParams);  FUNKAR INTE, BLIR FELMEDDELANDE!
 }
@@ -153,12 +153,12 @@ form.addEventListener('submit', async function (e) {
         console.log(formData);
         const JSONString = {
             content: formData.get('content')
-            
-            
+
+
         };
         console.log(JSON.stringify(JSONString));
-        
-        
+
+
         try {
             const response = await fetch(`http://localhost:5000/posts/${urlParams.get('id')}`, {
                 method: 'PATCH', // GET/POST/PATCH/DELETE
@@ -167,7 +167,7 @@ form.addEventListener('submit', async function (e) {
                 },
                 body: JSON.stringify(JSONString),
 
-                
+
             })
 
             if (!response.ok) {
@@ -189,12 +189,12 @@ form.addEventListener('submit', async function (e) {
 
 /*window.onload = function() {
     const queryString = window.location.search; //  ?id=6229f059f1d1df664039fdd1 (olika ID beroende på vilket inlägg man trycker på)
-    
+
     const urlParams = new URLSearchParams(queryString);  // metod som används för att arbeta med querystrings
     console.log(urlParams);
     console.log(urlParams.get('id'));
-    
-   
+
+
     fetchPun(urlParams); //Nu kickar du igång funktionen
     //updatePunEvent(urlParams);
 }
@@ -206,21 +206,21 @@ async function fetchPun(urlParams) {
         const response = await fetch(`http://localhost:5000/posts/${urlParams.get('id')}`)  //ID för inlägget är: 6229f059f1d1df664039fdd1
         const post = await response.json();
         console.log(post);
-        
-                
+
+
         console.log(document.getElementById('content').innerText = post.content);
        //console.log(document.getElementById('author').innerText = post.author);  //Funkar ej
         //console.log(document.getElementById('title').innerText = post.title);  //Funkar ej
-      
+
     } catch(error) {
         console.log(error)
     }
-    
+
 
 
    function updatePunEvent(urlParams) {
     const form = document.getElementById(update-post);
-    
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
@@ -229,13 +229,13 @@ async function fetchPun(urlParams) {
         const JSONString = {
             content: formData.get('content'),
             //??  author: formData.get('author')
-            
-            
-            
+
+
+
         };
         console.log(JSON.stringify(JSONString));
-        
-        
+
+
         try {
             const response = await fetch(`http://localhost:5000/posts/${urlParams.get('id')}`, {
                 method: 'PATCH', // GET/POST/PATCH/DELETE
@@ -244,7 +244,7 @@ async function fetchPun(urlParams) {
                 },
                 body: JSON.stringify(JSONString),
 
-                
+
             })
 
             if (!response.ok) {
@@ -270,9 +270,9 @@ window.onload = function() {
 	//via metoden get nedan: rad 5, 36
     console.log(urlParams.get('id')); //id för den pun jag valt att uppdatera
 
-    fetchPun(urlParams); //startar en funktion 
+    fetchPun(urlParams); //startar en funktion
     updatePunEvent(urlParams);	//Den funktionen har jag inte!!
-    
+
 }
 
 
@@ -291,14 +291,14 @@ function updatePunEvent(urlParams) {
     const form = document.getElementById('update-post'); //fångar upp formulärets id
     form.addEventListener('submit', async function(e) { //submit här
         e.preventDefault();
-		
+
 		//ENLIGT SIBAR ÄR RESTEN EN KOPIA AV CREATE-PUN, Kopiera allt och klistra in
 
         const formData = new FormData(e.target) // e.target is the form, in this case
         console.log(formData);
         const JSONString = {
             content: formData.get('content'),
-            author: formData.get('author')	//content syftar tillbaks på konsollen (content) 
+            author: formData.get('author')	//content syftar tillbaks på konsollen (content)
         };
         console.log(JSON.stringify(JSONString));
 
@@ -338,7 +338,7 @@ const urlParams = new URLSearchParams(queryString); // metod som används för a
 //  console.log(urlParams);
 const blogId = urlParams.get('id');
 
-// Fill the page with data fron dB
+// Fill the page with data from dB
 
 window.onload = async function () {
 	try {
@@ -352,7 +352,7 @@ window.onload = async function () {
 
 		let checked = post.tags;
 
-		if (checked[0]) {
+		if (checked) {
 			checked.map((item) => {
 				// Since the tags are changing, we create new elements and show them in the page
 				let container = document.createElement('li');
@@ -447,7 +447,7 @@ form.addEventListener('submit', async function (e) {
 				content: updatedcontent,
 				tags: updatedcheck,
 			}),
-           
+
 		});
 
 		if (!response.ok) {
@@ -461,5 +461,3 @@ form.addEventListener('submit', async function (e) {
 		errorHandler.textContent = error;
 	}
 });
-
-
