@@ -32,7 +32,7 @@ async function showPosts() {
             ":" +
             new Date(post.date).getSeconds()
           }</p>
-        <p>${post.tags}</p>
+        <p><strong>tags:</strong>${post.tags}</p>
         <p>${post.content}</p>
         <a href="post.html?id=${post._id}&title=${post.title}&content=${
         post.content

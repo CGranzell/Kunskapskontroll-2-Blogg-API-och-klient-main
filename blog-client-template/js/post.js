@@ -24,19 +24,19 @@ async function showPost() {
 
     // Bestämmer html struktur
     // Skriver ut datan via html på sidan
-    document.getElementById("mattias2").innerHTML = `
+    document.getElementById("specific-content").innerHTML = `
          <div class="specific-post">
         <h1>${urlParams.get("title")}</h1>
         
-        <p><em> ${urlParams.get("author")}</em></p>
+        <p><em> ${urlParams.get("author")} </em>- ${new Date(
+      urlParams.get("date")
+    ).toLocaleDateString()} 
+           </em></p>
         <p><strong>tags:</strong> ${urlParams.get("tags")}</p>
         <p>${urlParams.get("content")}</p>
-        <h1>${urlParams.get("title")}</h1>
-        <p>${urlParams.get("content")}</p>
-        <p>${urlParams.get("author")}</p>
-        <p>${urlParams.get("tags")}</p>
-		<p>${urlParams.get("date")}</p>
-    {/8}
+        
+		
+    
         </div>
     `;
   } catch (error) {
