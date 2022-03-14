@@ -23,10 +23,22 @@ async function showPosts() {
       <div class="testing-mattias">
       <h1>${post.title}</h1>
         
-        <p><em>${post.author}</em></p>
+        <p><em>${post.author}</em> -  ${new Date(
+        post.date
+      ).toLocaleDateString()}
+          
+          ${
+            new Date(post.date).getHours() +
+            ":" +
+            new Date(post.date).getSeconds()
+          }</p>
         <p>${post.tags}</p>
         <p>${post.content}</p>
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}" class="read-more-link">Read More <span>&#10142;</span></a>
+        <a href="post.html?id=${post._id}&title=${post.title}&content=${
+        post.content
+      }&author=${
+        post.author
+      }&tags=${emptyArray}" class="read-more-link">Read More <span>&#10142;</span></a>
         
        </div>
 
