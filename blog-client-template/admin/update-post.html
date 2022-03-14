@@ -14,6 +14,7 @@
 	width: 860px;
 	background-color: #85e0e0;
 	
+		
 	}
 	
 	#back-position {
@@ -37,6 +38,7 @@
 		width: 78%;
 		height: 2.5em;
 		font-weight: bold;
+		font-size: 14px;
 	}
 
 	.back {
@@ -54,11 +56,46 @@
 	.blogpage {
 	position: relative;
 	left: 37em;
-	font-weight: 1.5em;
+	
 	text-decoration: none;
-		color: black;
+	color: black;
+	}
+
+	hr {
+		width: 75%;
+		margin-left: 0.5em;
+		background-color: white;
+		
+	}
+
+	h1 {
+		font-size: 270%;
+	}
+
+	.title-font, .author-font, .content-font, .tags-font {
+		font-size: 120%;
+		
+	}
+
+	 .economics, .politics, .sport, .art, .food, .travel, .cars  {
+		font-size: 120%;
+	}
+
+	
+	input {
+		border-radius: 4px;
+	}
+	
+	#content, .submit {
+		border-radius: 4px;
+	}
+
+	.tags {
+		border-radius: 4px;
 	}
 	</style>
+
+	
 	
 	</head>
 	
@@ -68,54 +105,56 @@
 <body class="update-page">
 <div id="container">
 <p class="errorHandler"> </p> 
+<br>
+
+
 <a href="/blog-client-template/index.html" class="blogpage"> Blog page </a>
 <hr>
 	<form id="update-post">
+		 
 
         <h1>Update post</h1>
-
-			<label for="title">Title</label><br>
+		
+			<label for="title" class="title-font">Title</label><br>
 			<input type="text" id="title" name="title"><p></p>
 
-			<label for="author">Author</label><br>
+			<label for="author" class="author-font" >Author</label><br>
 			<input type="text" id="author" name="author" width="7em"><p></p>
 
-			 <label for="content">Content</label><br>
-            <textarea name="content" id="content" cols="90" rows="10"> </textarea>
+			 <label for="content" class="content-font">Content</label><br>
+            <textarea name="content" id="content" cols="89" rows="10"> </textarea>
 			<p></p>
+		 
 
-			<label for="tags"> Tags </label>
+			<label for="tags" class="tags-font"> Tags </label>
 				<div class="tags"> 
 					
 					
 						
 					   <input type="checkbox" value="Economics" name="tag" />
-						<label class="text-lg" for="Economics">Economics</label> 
+						<label class="economics" for="Economics">Economics</label> 
 						<br />
 						<input type="checkbox" value="Politics" name="tag" />
-						<label class="text-lg" for="Politics">Politics</label>
+						<label class="politics" for="Politics">Politics</label>
 						<br />
 						<input type="checkbox" name="tag" value="Sport" />
-						<label class="text-lg" for="Sport">Sport</label> <br />
+						<label class="sport" for="Sport">Sport</label> <br />
 						<input type="checkbox" name="tag" value="Art" />
-						<label class="text-lg" for="Art">Art</label> <br />
+						<label class="art" for="Art">Art</label> <br />
 						<input type="checkbox" name="tag" value="Food" />
-						<label class="text-lg" for="Food">Food</label> <br />
+						<label class="food" for="Food">Food</label> <br />
 						<input type="checkbox" name="tag" value="Travel" />
-						<label class="text-lg" for="Travel">Travel</label> <br />
+						<label class="travel" for="Travel">Travel</label> <br />
 						<input type="checkbox" name="tag" value="Cars" />
-						<label class="text-lg" for="Cars">Cars</label> <br />
+						<label class="cars" for="Cars">Cars</label> <br />
 					
 				</div>
-
-
-			
 
 			<br/>
 
             <input type="submit" class="submit" value="Update">
 
-						
+			<p></p>			
 			 <div id="back-position">
 				 <a href="index.html" class="back"> <p></p> &#x2190; Back</a> 
 			</div> 
