@@ -1,12 +1,11 @@
-
-a { font-size: 1.0rem;
+a {
+  font-size: 1rem;
   text-decoration: none;
   padding: 0.3rem;
   border: 3px solid black;
   border-radius: 1rem;
   background-color: white;
   color: rgb(23, 28, 32);
-  
 }
 
 ul {
@@ -41,6 +40,23 @@ h2 {
 }
 
 /* Christoffers kod */
+
 .specific-post {
-  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 4rem;
+  height: 40rem;
+  background-color: #fff;
+  line-height: 200%;
+  padding: 1rem;
+}
+.specific-post h1 {
+  text-align: center;
+}
+
+#specific-link {
+  margin-left: 70%;
 }

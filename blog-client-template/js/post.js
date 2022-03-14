@@ -24,12 +24,12 @@ async function showPost() {
 
     // Bestämmer html struktur
     // Skriver ut datan via html på sidan
-    document.getElementById("mattias2").innerHTML = `
+    document.getElementById("specific-content").innerHTML = `
          <div class="specific-post">
         <h1>${urlParams.get("title")}</h1>
         <p>${urlParams.get("content")}</p>
-        <p>${urlParams.get("author")}</p>
-        <p>${urlParams.get("tags")}</p>
+        <p>Author: ${urlParams.get("author")}</p>
+        <p><em>Tags:</em> ${urlParams.get("tags")}</p>
         </div>
     `;
   } catch (error) {
