@@ -2,6 +2,9 @@
 
 
 
+
+
+
 // Get elements to be filled with data
 
 let title = document.querySelector('#title');
@@ -18,7 +21,7 @@ const urlParams = new URLSearchParams(queryString); // metod som används för a
 //  console.log(urlParams);
 const blogId = urlParams.get('id');
 
-// Fill the page with data fron dB
+// Fill the page with data from dB
 
 window.onload = async function () {
 	try {
@@ -32,7 +35,7 @@ window.onload = async function () {
 
 		let checked = post.tags;
 
-		if (checked[0]) {
+		if (checked) {
 			checked.map((item) => {
 				// Since the tags are changing, we create new elements and show them in the page
 				let container = document.createElement('li');
@@ -127,7 +130,7 @@ form.addEventListener('submit', async function (e) {
 				content: updatedcontent,
 				tags: updatedcheck,
 			}),
-           
+
 		});
 
 		if (!response.ok) {
@@ -141,5 +144,3 @@ form.addEventListener('submit', async function (e) {
 		errorHandler.textContent = error;
 	}
 });
-
-

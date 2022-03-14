@@ -16,16 +16,37 @@ async function showPosts() {
       let emptyArray = [];
       // Placerar tags i den tomma arrayen
       emptyArray += post.tags;
+      console.log(post.content.substring(0, 3));
 
       // Bestämmer html struktur
       //Skickar även in data till post.html
       html += `
       <div class="testing-mattias">
       <h1>${post.title}</h1>
-        <p>${post.content}</p>
-        <p>${post.author}</p>
-        <p>${post.tags}</p>
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}">Read More <span>&#10142;</span></a>
+        
+        <p><em>${post.author}</em> -  ${new Date(
+        post.date
+      ).toLocaleDateString()}
+          
+          ${
+            new Date(post.date).getHours() +
+            ":" +
+            new Date(post.date).getSeconds()
+          }</p>
+        <p><strong>tags:</strong>${post.tags}</p>
+        <p>${post.content.substring(0, 100) + "..."} 
+           <a href="post.html?id=${post._id}&title=${post.title}&content=${
+        post.content
+      }&author=${
+        post.author
+      }&tags=${emptyArray}" class="read-more-link">Read More <span>&#10142;</span></a>
+        
+        </p>
+
+
+
+      
+        
        </div>
 
       `;
@@ -36,4 +57,3 @@ async function showPosts() {
     console.log(error);
   }
 }
- 
