@@ -17,22 +17,14 @@ async function showPosts() {
 			// Placerar tags i den tomma arrayen
 			emptyArray += post.tags;
 
-<<<<<<< HEAD
 			// Bestämmer html struktur
 			//Skickar även in data till post.html
 			html += `
       <div class="testing-mathias">
-=======
-      // Bestämmer html struktur
-      //Skickar även in data till post.html
-      html += `
-      <div class="testing-mattias">
->>>>>>> 55e481f31b32d5dcf2c21ec9748a429cca0b7bcd
       <h1>${post.title}</h1>
         <p>${post.content}</p>
         <p>${post.author}</p>
         <p>${post.tags}</p>
-<<<<<<< HEAD
   		<p>${post.date.substring(0, 10)}</p>
 
         <a href="post.html?id=${post._id}&title=${post.title}&content=${
@@ -81,17 +73,3 @@ list.addEventListener(
 	},
 	false
 );
-=======
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}">Read More <span>&#10142;</span></a>
-       </div>
-
-      `;
-    }
-    // Skriver ut datan via html på sidan
-    document.getElementById("mattias-index").innerHTML = html;
-  } catch (error) {
-    console.log(error);
-  }
-}
- 
->>>>>>> 55e481f31b32d5dcf2c21ec9748a429cca0b7bcd

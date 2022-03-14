@@ -22,7 +22,6 @@ async function showPost() {
 		const posts = await response.json();
 		console.log(posts);
 
-<<<<<<< HEAD
 		// Bestämmer html struktur
 		// Skriver ut datan via html på sidan
 		document.getElementById('mattias2').innerHTML = `
@@ -33,16 +32,6 @@ async function showPost() {
         <p>${urlParams.get('tags')}</p>
 		<p>${urlParams.get('date')}</p>
     {/8}
-=======
-    // Bestämmer html struktur
-    // Skriver ut datan via html på sidan
-    document.getElementById("specific-content").innerHTML = `
-         <div class="specific-post">
-        <h1>${urlParams.get("title")}</h1>
-        <p>${urlParams.get("content")}</p>
-        <p>Author: ${urlParams.get("author")}</p>
-        <p><em>Tags:</em> ${urlParams.get("tags")}</p>
->>>>>>> 55e481f31b32d5dcf2c21ec9748a429cca0b7bcd
         </div>
     `;
 	} catch (error) {
