@@ -27,9 +27,10 @@ async function showPost() {
     document.getElementById("specific-content").innerHTML = `
          <div class="specific-post">
         <h1>${urlParams.get("title")}</h1>
+        
+        <p><em> ${urlParams.get("author")}</em></p>
+        <p><strong>tags:</strong> ${urlParams.get("tags")}</p>
         <p>${urlParams.get("content")}</p>
-        <p>Author: ${urlParams.get("author")}</p>
-        <p><em>Tags:</em> ${urlParams.get("tags")}</p>
         </div>
     `;
   } catch (error) {

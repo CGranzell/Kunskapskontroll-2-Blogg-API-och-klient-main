@@ -22,10 +22,12 @@ async function showPosts() {
       html += `
       <div class="testing-mattias">
       <h1>${post.title}</h1>
-        <p>${post.content}</p>
-        <p>${post.author}</p>
+        
+        <p><em>${post.author}</em></p>
         <p>${post.tags}</p>
-        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}">Read More <span>&#10142;</span></a>
+        <p>${post.content}</p>
+        <a href="post.html?id=${post._id}&title=${post.title}&content=${post.content}&author=${post.author}&tags=${emptyArray}" class="read-more-link">Read More <span>&#10142;</span></a>
+        
        </div>
 
       `;
@@ -36,4 +38,3 @@ async function showPosts() {
     console.log(error);
   }
 }
- 

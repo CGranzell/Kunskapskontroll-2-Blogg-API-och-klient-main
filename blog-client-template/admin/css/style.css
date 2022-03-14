@@ -20,13 +20,15 @@ hr {
   margin-left: 45%;
   font-size: 1.4rem;
   text-decoration: none;
-  padding: 0.3rem;
-  border: 3px solid black;
+  padding: 1rem;
+  color: black;
+  /* border: 3px solid black;
   border-radius: 1rem;
-  /* background-color: rgba(226, 247, 36, 0.973); */
+  
   background-color: white;
-  color: rgb(23, 28, 32);
+  color: rgb(23, 28, 32); */
 }
+
 .container-manage-post h1 {
   align-self: center;
 }
