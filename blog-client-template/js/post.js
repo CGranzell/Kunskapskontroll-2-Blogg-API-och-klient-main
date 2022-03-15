@@ -30,11 +30,11 @@ async function showPost() {
         <p>
           <em> ${urlParams.get("author")} </em> | 
             ${
-              getDateForPosts.getDate(urlParams) +
+              getDateForPosts.getDate() +
               " | " +
-              getDateForPosts.getHours(urlParams) +
+              getDateForPosts.getHours() +
               " : " +
-              getDateForPosts.getSeconds(urlParams)
+              getDateForPosts.getSeconds()
             } 
           </em>
         </p>
@@ -50,15 +50,15 @@ async function showPost() {
 //Objekt för tidshantering
 let getDateForPosts = {
   //Hantera Datum
-  getDate: function (urlParams) {
+  getDate: function () {
     return new Date(urlParams.get("date")).toLocaleDateString();
   },
   //Hantera timmar
-  getHours: function (urlParams) {
+  getHours: function () {
     return new Date(urlParams.get("date")).getHours();
   },
   //Hantera sekunder
-  getSeconds: function (urlParams) {
+  getSeconds: function () {
     // Ställer in datum för inläggen
     const date = new Date(urlParams.get("date"));
     //Sekunder
