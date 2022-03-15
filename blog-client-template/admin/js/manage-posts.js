@@ -1,15 +1,18 @@
 window.onload = function () {
   managePuns();
 };
-
+// funktion som hämtar datan från databasen
 async function managePuns() {
   try {
+    //Gör anrop till databasen
     const response = await fetch("http://localhost:5000/posts");
-    console.log(response);
+    // Får tillgång till datan
     const posts = await response.json();
-    console.log('posts are ' + ' ' + posts);
+    // En tom variabel för att placera html i
     let html = "";
+    //Loopar igenom objektet och får tillgång till varje enskilt inlägg
     for (let post of posts) {
+      // Bestämmer html struktur
       html += `
       <tr>
 				<td>${post.title}</td>
@@ -35,23 +38,27 @@ async function managePuns() {
 
       `;
     }
+    // Skriver ut datan via html på sidan
     document.getElementById("table-body").innerHTML = html;
   } catch (error) {
     console.log(error);
   }
-
+  //snappar upp alla delete länkar
   const deletePostLink = document.getElementsByClassName("delete-post");
-  // console.log(deletePostLink);
-
+  //Loopar igenom deletelänkarna och får tillgång till varje enskild länk
   for (let link of deletePostLink) {
-    // console.log(link);
+    // lägger till en eventlistener på varje enskild länk
     link.addEventListener("click", async function (e) {
+      // Gör så att sidan inte laddas om
       e.preventDefault();
+      //sparar id:et på den länk man klickar på i en variabel
       const postId = e.target.dataset.id;
       try {
+        //Gör anrop till databasen
         await fetch(`http://localhost:5000/posts/${postId}`, {
           method: "DELETE",
         });
+        //tar bort hela inlägget
         e.target.parentNode.parentNode.remove();
       } catch (error) {
         console.log(error);

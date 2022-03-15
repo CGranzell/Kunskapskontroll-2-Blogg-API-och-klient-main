@@ -1,3 +1,4 @@
+/* index kod */
 body {
   background-color: #7ed3fc;
 }
@@ -6,10 +7,6 @@ a {
   font-size: 1rem;
   text-decoration: none;
   color: black;
-  /* border: 3px solid black;
-  border-radius: 1rem;
-  background-color: white;
-  color: rgb(23, 28, 32); */
 }
 
 ul {
@@ -39,8 +36,6 @@ h2 {
 }
 
 .testing-mattias {
-  /* border: 1px solid black; */
-  /* text-align: center; */
   width: 50%;
   margin-left: 25%;
   margin-top: 3rem;
@@ -53,8 +48,7 @@ h2 {
 .read-more-link {
   font-size: 1rem;
 }
-/* Christoffers kod */
-
+/* Specific blog post */
 .specific-post {
   display: flex;
   flex-direction: column;

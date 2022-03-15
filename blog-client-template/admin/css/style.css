@@ -1,4 +1,4 @@
-/* Manage-post Christoffer */
+/* admin-manage post */
 body {
   margin: 0;
   padding: 0;
@@ -22,11 +22,6 @@ hr {
   text-decoration: none;
   padding: 1rem;
   color: black;
-  /* border: 3px solid black;
-  border-radius: 1rem;
-  
-  background-color: white;
-  color: rgb(23, 28, 32); */
 }
 
 .container-manage-post h1 {
@@ -65,7 +60,6 @@ td {
   font-size: 1.4rem;
   text-decoration: none;
 }
-
 tbody {
   background-color: aliceblue;
 }

@@ -11,6 +11,7 @@ async function showPosts() {
     const posts = await response.json();
     // En tom variabel för att placera html i
     let html = "";
+    //Loopar igenom objektet och får tillgång till varje enskilt inlägg
     for (let post of posts) {
       // En tom array för att placera tags i
       let emptyArray = [];
