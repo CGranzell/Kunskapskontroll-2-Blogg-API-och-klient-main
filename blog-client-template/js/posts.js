@@ -18,7 +18,11 @@ async function showPosts() {
       // Placerar tags i den tomma arrayen
       emptyArray += post.tags;
       console.log(post.content.substring(0, 3));
-
+      // Ställer in datum för inläggen
+      const date = new Date(post.date);
+      //Sekunder
+      let seconds = date.getSeconds();
+      seconds = seconds <= 9 ? "0" + seconds : seconds;
       // Bestämmer html struktur
       //Skickar även in data till post.html
       html += `
@@ -29,11 +33,7 @@ async function showPosts() {
         post.date
       ).toLocaleDateString()}
           
-          ${
-            new Date(post.date).getHours() +
-            ":" +
-            new Date(post.date).getSeconds()
-          }</p>
+          ${new Date(post.date).getHours() + ":" + seconds}</p>
         <p><strong>tags:</strong>${post.tags}</p>
         <p>${post.content.substring(0, 100) + "..."} 
            <a href="post.html?id=${post._id}&title=${post.title}&content=${
