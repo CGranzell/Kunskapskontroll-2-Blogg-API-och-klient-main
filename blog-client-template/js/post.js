@@ -21,17 +21,27 @@ async function showPost() {
     // Får tillgång till datan
     const posts = await response.json();
     console.log(posts);
-
+    // Ställer in datum för inläggen
+    const date = new Date(urlParams.get("date"));
+    //Sekunder
+    let seconds = date.getSeconds();
+    seconds = seconds <= 9 ? "0" + seconds : seconds;
     // Bestämmer html struktur
     // Skriver ut datan via html på sidan
     document.getElementById("specific-content").innerHTML = `
-         <div class="specific-post">
+      <div class="specific-post">
         <h1>${urlParams.get("title")}</h1>
-        
-        <p><em> ${urlParams.get("author")} </em>- ${new Date(
-      urlParams.get("date")
-    ).toLocaleDateString()} 
-           </em></p>
+        <p>
+          <em> ${urlParams.get("author")} </em> | 
+            ${
+              new Date(urlParams.get("date")).toLocaleDateString() +
+              " | " +
+              new Date(urlParams.get("date")).getHours() +
+              " : " +
+              seconds
+            } 
+          </em>
+        </p>
         <p><strong>tags:</strong> ${urlParams.get("tags")}</p>
         <p>${urlParams.get("content")}</p>
         </div>
