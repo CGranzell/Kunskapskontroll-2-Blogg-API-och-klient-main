@@ -34,9 +34,6 @@ async function showPost() {
            </em></p>
         <p><strong>tags:</strong> ${urlParams.get("tags")}</p>
         <p>${urlParams.get("content")}</p>
-        
-		
-    
         </div>
     `;
   } catch (error) {
