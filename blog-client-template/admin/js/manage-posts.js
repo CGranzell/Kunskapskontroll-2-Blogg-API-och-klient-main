@@ -12,6 +12,11 @@ async function managePuns() {
     let html = "";
     //Loopar igenom objektet och får tillgång till varje enskilt inlägg
     for (let post of posts) {
+      // Ställer in datum för inläggen
+      const date = new Date(post.date);
+      //Sekunder
+      let seconds = date.getSeconds();
+      seconds = seconds <= 9 ? "0" + seconds : seconds;
       // Bestämmer html struktur
       html += `
       <tr>
@@ -20,11 +25,7 @@ async function managePuns() {
         <td>${post.tags}</td>
 				<td>${new Date(post.date).toLocaleDateString()}
           <br>
-          ${
-            new Date(post.date).getHours() +
-            ":" +
-            new Date(post.date).getSeconds()
-          }</td>
+          ${new Date(post.date).getHours() + ":" + seconds}</td>
 				<td>
           <a href="update-post.html?id=${
             post._id
