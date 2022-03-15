@@ -25,18 +25,17 @@ async function managePuns() {
         <td>${post.tags}</td>
 				<td>${new Date(post.date).toLocaleDateString()}
           <br>
-          ${new Date(post.date).getHours() + ":" + seconds}</td>
-				<td>
-          <a href="update-post.html?id=${
-            post._id
-          }" class="update">Update<span>&#8634</span></a>
-          <a href="#" class="delete-post" data-id="${
-            post._id
-          }">Delete<span>&#10006</span></a>
+           ${new Date(post.date).getHours() + ":" + seconds}
         </td>
-
+				<td>
+          <a href="update-post.html?id=${post._id}"
+           class="update">Update<span>&#8634</span>
+         </a>
+          <a href="#" data-id="${post._id}"
+          class="delete-post">Delete<span>&#10006</span>
+          </a>
+        </td>
 			</tr>
-
       `;
     }
     // Skriver ut datan via html på sidan
