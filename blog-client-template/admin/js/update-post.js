@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 // Get elements to be filled with data
 
 let title = document.querySelector('#title');
@@ -18,20 +13,22 @@ let errorHandler = document.querySelector('.errorHandler');
 
 const queryString = window.location.search; //  ?id=6229f059f1d1df664039fdd1 (olika ID beroende på vilket inlägg man trycker på)
 const urlParams = new URLSearchParams(queryString); // metod som används för att arbeta med querystrings
-//  console.log(urlParams);
 const blogId = urlParams.get('id');
 
 // Fill the page with data from dB
 
 window.onload = async function () {
 	try {
-		const response = await fetch(`http://localhost:5000/posts/${blogId}`); //ID för inlägget är: 6229f059f1d1df664039fdd1
+		const response = await fetch(`http://localhost:5000/posts/${blogId}`); //ID för inlägget, t.ex.: 6229f059f1d1df664039fdd1
 		const post = await response.json();
 		console.log(post);
 
 		title.value = post.title;
+		console.log(title.value); //Visar titeln (Man får ut samma värde, men har olika tillvägagångssätt: title.value = post.title)
 		author.value = post.author;
+		
 		content.value = post.content;
+		
 
 		let checked = post.tags;
 
@@ -57,35 +54,15 @@ window.onload = async function () {
 			});
 		}
 
-		//     console.log(document.getElementById('content').innerText = post.content);
-		//    console.log(document.getElementById('author').innerText = post.author);  //Funkar ej
-		//     console.log(document.getElementById('title').innerText = post.title);  //Funkar ej
+		
 	} catch (error) {
 		// Shows errors in the page
 		errorHandler.textContent = error;
 	}
 
-	// fetchPun(urlParams); //Nu kickar du igång funktionen
-	//updatePunEvent(urlParams);
+	
 };
 
-// async function fetchPun(urlParams) {
-//     try {
-//         const response = await fetch(`http://localhost:5000/posts/${urlParams.get('id')}`)  //ID för inlägget är: 6229f059f1d1df664039fdd1
-//         const post = await response.json();
-//         console.log(post);
-
-//         console.log(document.getElementById('content').innerText = post.content);
-//        console.log(document.getElementById('author').innerText = post.author);  //Funkar ej
-//         console.log(document.getElementById('title').innerText = post.title);  //Funkar ej
-
-//     } catch(error) {
-//         console.log(error)
-//     }
-
-//    function updatePunEvent() {
-
-// }
 
 // Get the form
 
@@ -93,24 +70,17 @@ const form = document.getElementById('update-post');
 
 // Update the blog
 form.addEventListener('submit', async function (e) {
-	e.preventDefault();
-
-	// const formData = new FormData(e.target) // e.target is the form, in this case
-	// console.log(formData);
-	// const JSONString = {
-	//     content: formData.get('content')
-
-	// };
-	// console.log(JSON.stringify(JSONString));
-
+	e.preventDefault(); //e-target är i det här fallet kopplat till formuläret
+	
 	// Get updated inputs value
 	let updatedtitle = e.target['title'].value;
 	let updatedauthor = e.target['author'].value;
 	let updatedcontent = e.target['content'].value;
-
+	
 	// Gets all tags
 	let formtags = e.target['tag'];
 	let updatedcheck = [];
+	
 
     if(formtags){
         formtags.forEach((element) => {
@@ -136,7 +106,6 @@ form.addEventListener('submit', async function (e) {
 		if (!response.ok) {
 			throw new Error('Something went wrong with the API');
 		}
-
 
 
 		window.location.replace('index.html'); // redirects to index.html
