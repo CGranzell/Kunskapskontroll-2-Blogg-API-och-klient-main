@@ -18,20 +18,20 @@ const blogId = urlParams.get('id');
 // Fill the page with data from dB
 
 window.onload = async function () {
+	
 	try {
 		const response = await fetch(`http://localhost:5000/posts/${blogId}`); //ID för inlägget, t.ex.: 6229f059f1d1df664039fdd1
 		const post = await response.json();
 		console.log(post);
+		
 
-		title.value = post.title;
-		console.log(title.value); //Visar titeln (Man får ut samma värde, men har olika tillvägagångssätt: title.value = post.title)
+		title.value = post.title; //title refererar här till title när man loggar - inte 'let title'
+		console.log(post.title); //Visar titeln (Man får ut samma värde, men har olika tillvägagångssätt: title.value = post.title)
 		author.value = post.author;
-		
 		content.value = post.content;
-		
-
 		let checked = post.tags;
-
+		
+		
 		if (checked) {
 			checked.map((item) => {
 				// Since the tags are changing, we create new elements and show them in the page
@@ -59,10 +59,8 @@ window.onload = async function () {
 		// Shows errors in the page
 		errorHandler.textContent = error;
 	}
-
 	
 };
-
 
 // Get the form
 
