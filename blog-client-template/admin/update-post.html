@@ -3,104 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update post</title>
-			 	
-		<style>
-		
-	.update-page {
-	margin: auto;
-	width: 860px;
-	background-color: #85e0e0;
+	<link rel="stylesheet" href="css/style.css" />
 	
-		
-	}
-	
-	#back-position {
-	position: relative;
-	left: 19em;
-	font-weight: bold;
-	
-	}
-
-	#title {
-		width: 78%;
-		height: 2.5em;
-	}
-
-	#author {
-		width: 78%;
-		height: 2.5em;
-	}
-		
-	.submit {
-		width: 78%;
-		height: 2.5em;
-		font-weight: bold;
-		font-size: 14px;
-	}
-
-	.back {
-		text-decoration: none;
-		color: black;
-
-		}
-
-	.tags {
-		width: 78%;
-		background-color: white;
-		
-	}
-
-	.blogpage {
-	position: relative;
-	left: 37em;
-	
-	text-decoration: none;
-	color: black;
-	}
-
-	hr {
-		width: 75%;
-		margin-left: 0.5em;
-		background-color: white;
-		
-	}
-
-	h1 {
-		font-size: 270%;
-	}
-
-	.title-font, .author-font, .content-font, .tags-font {
-		font-size: 120%;
-		
-	}
-
-	 .economics, .politics, .sport, .art, .food, .travel, .cars  {
-		font-size: 120%;
-	}
+</head>
 
 	
-	input {
-		border-radius: 4px;
-	}
-	
-	#content, .submit {
-		border-radius: 4px;
-	}
-
-	.tags {
-		border-radius: 4px;
-	}
-	</style>
-		
-	</head>
-	
-	<body class="update-page">
+<body class="update-page">
 <div id="container">
 <p class="errorHandler"> </p> 
 <br>
 
 <a href="index.html" class="blogpage"> Blog page </a>
-<hr>
+<hr class="linebreak">
 	<form id="update-post">
 		 
 
@@ -110,17 +24,16 @@
 			<input type="text" id="title" name="title"><p></p>
 
 			<label for="author" class="author-font" >Author</label><br>
-			<input type="text" id="author" name="author" width="7em"><p></p>
+			<input type="text" id="author" name="author"><p></p>
 
 			 <label for="content" class="content-font">Content</label><br>
-            <textarea name="content" id="content" cols="89" rows="10"> </textarea>
+            <textarea name="content" id="content" cols="76" rows="10"> </textarea>
 			<p></p>
 		 
 
 			<label for="tags" class="tags-font"> Tags </label>
 				<div class="tags"> 
-					
-					
+								
 						
 					   <input type="checkbox" value="Economics" name="tag" />
 						<label class="economics" for="Economics">Economics</label> 
@@ -148,10 +61,14 @@
 			<p></p>			
 	 		 <div id="back-position">
 				 <a href="index.html" class="back"> <p></p> &#x2190; Back</a> 
+				 
 			</div> 
+			
     </form>
     </div>
-
+	
     <script src="js/update-post.js"></script>
+	
+
 </body>
 </html>
