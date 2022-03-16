@@ -12,20 +12,19 @@ async function managePuns() {
     let html = "";
     //Loopar igenom objektet och får tillgång till varje enskilt inlägg
     for (let post of posts) {
-      // Ställer in datum för inläggen
-      const date = new Date(post.date);
-      //Sekunder
-      let seconds = date.getSeconds();
-      seconds = seconds <= 9 ? "0" + seconds : seconds;
       // Bestämmer html struktur
       html += `
       <tr>
 				<td>${post.title}</td>
 				<td>${post.author}</td>
         <td>${post.tags}</td>
-				<td>${new Date(post.date).toLocaleDateString()}
+				<td>${getDateForPosts.getDate(post)}
           <br>
-           ${new Date(post.date).getHours() + ":" + seconds}
+           ${
+             getDateForPosts.getHours(post) +
+             " : " +
+             getDateForPosts.getSeconds(post)
+           }
         </td>
 				<td>
           <a href="update-post.html?id=${post._id}"
@@ -66,3 +65,24 @@ async function managePuns() {
     });
   }
 }
+
+//Objekt för tidshantering
+let getDateForPosts = {
+  //Hantera Datum
+  getDate: function (post) {
+    return new Date(post.date).toLocaleDateString();
+  },
+  //Hantera timmar
+  getHours: function (post) {
+    return new Date(post.date).getHours();
+  },
+  //Hantera sekunder
+  getSeconds: function (post) {
+    //   // Ställer in datum för inläggen
+    const date = new Date(post.date);
+    //   //Sekunder
+    let seconds = date.getSeconds();
+    seconds = seconds <= 9 ? "0" + seconds : seconds;
+    return seconds;
+  },
+};

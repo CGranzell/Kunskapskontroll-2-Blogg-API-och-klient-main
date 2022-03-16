@@ -18,12 +18,6 @@ async function showPosts() {
       let emptyArray = [];
       // Placerar tags i den tomma arrayen
       emptyArray += post.tags;
-
-      // Ställer in datum för inläggen
-      const date = new Date(post.date);
-      //Sekunder
-      let seconds = date.getSeconds();
-      seconds = seconds <= 9 ? "0" + seconds : seconds;
       // Bestämmer html struktur
       //Skickar även in data till post.html
       html += `
@@ -31,8 +25,12 @@ async function showPosts() {
          <h1>${post.title}</h1>
            <p>
              <em>${post.author}</em> |
-               ${new Date(post.date).toLocaleDateString() + " |"}
-               ${new Date(post.date).getHours() + ":" + seconds}
+               ${getDateForPosts.getDate(post) + " |"}
+               ${
+                 getDateForPosts.getHours(post) +
+                 ":" +
+                 getDateForPosts.getSeconds(post)
+               }
            </p>
           <p><strong>tags:</strong>${post.tags}</p>
           <p>${post.content.substring(0, 100) + "..."} 
@@ -41,9 +39,11 @@ async function showPosts() {
             &content=${post.content}
             &author=${post.author}
             &tags=${emptyArray}
-            &date=${new Date(post.date).toLocaleDateString()}
+            &date=${getDateForPosts.getDate(post)}
             ${
-              new Date(post.date).getHours() + ":" + seconds
+              getDateForPosts.getHours(post) +
+              ":" +
+              getDateForPosts.getSeconds(post)
             }" class="read-more-link">Read More <span>&#10142;</span></a>
           </p>
        </div>
@@ -55,3 +55,24 @@ async function showPosts() {
     console.log(error);
   }
 }
+
+//Objekt för tidshantering
+let getDateForPosts = {
+  //Hantera Datum
+  getDate: function (post) {
+    return new Date(post.date).toLocaleDateString();
+  },
+  //Hantera timmar
+  getHours: function (post) {
+    return new Date(post.date).getHours();
+  },
+  //Hantera sekunder
+  getSeconds: function (post) {
+    //   // Ställer in datum för inläggen
+    const date = new Date(post.date);
+    //   //Sekunder
+    let seconds = date.getSeconds();
+    seconds = seconds <= 9 ? "0" + seconds : seconds;
+    return seconds;
+  },
+};

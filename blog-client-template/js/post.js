@@ -21,11 +21,7 @@ async function showPost() {
     // Får tillgång till datan
     const posts = await response.json();
     console.log(posts);
-    // Ställer in datum för inläggen
-    const date = new Date(urlParams.get("date"));
-    //Sekunder
-    let seconds = date.getSeconds();
-    seconds = seconds <= 9 ? "0" + seconds : seconds;
+
     // Bestämmer html struktur
     // Skriver ut datan via html på sidan
     document.getElementById("specific-content").innerHTML = `
@@ -34,11 +30,11 @@ async function showPost() {
         <p>
           <em> ${urlParams.get("author")} </em> | 
             ${
-              new Date(urlParams.get("date")).toLocaleDateString() +
+              getDateForPosts.getDate() +
               " | " +
-              new Date(urlParams.get("date")).getHours() +
+              getDateForPosts.getHours() +
               " : " +
-              seconds
+              getDateForPosts.getSeconds()
             } 
           </em>
         </p>
@@ -50,3 +46,24 @@ async function showPost() {
     console.log(error);
   }
 }
+
+//Objekt för tidshantering
+let getDateForPosts = {
+  //Hantera Datum
+  getDate: function () {
+    return new Date(urlParams.get("date")).toLocaleDateString();
+  },
+  //Hantera timmar
+  getHours: function () {
+    return new Date(urlParams.get("date")).getHours();
+  },
+  //Hantera sekunder
+  getSeconds: function () {
+    // Ställer in datum för inläggen
+    const date = new Date(urlParams.get("date"));
+    //Sekunder
+    let seconds = date.getSeconds();
+    seconds = seconds <= 9 ? "0" + seconds : seconds;
+    return seconds;
+  },
+};
