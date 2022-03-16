@@ -68,39 +68,51 @@ tbody {
 }
 
 
+
+
+
+
+
+
+
+
 /* update-post.html */
 
-	.update-page {
-	margin: auto;
-	width: 860px;
+    
+	.update-page { 
 	background-color: #85e0e0;
+	margin: auto;
+	width: 50%;
+	height: 50%;
+		
 	}
+	
 
 	.linebreak {
-	width: 75%;
+	width: 117%;
 	margin-left: 0.5em;
 	background-color: white;
 	}
 	
 	#back-position {
 	position: relative;
-	left: 19em;
+	left: 16em;
 	font-weight: bold;
 	
 	}
 
 	#title {
-	width: 78%;
+	width: 120%;
 	height: 2.5em;
 	}
 
 	#author {
-	width: 78%;
+	width: 120%;
 	height: 2.5em;
 	}
 		
 	.submit {
-	width: 78%;
+	width: 120%;
 	height: 2.5em;
 	font-weight: bold;
 	font-size: 14px;
@@ -109,18 +121,20 @@ tbody {
 	.back {
 	text-decoration: none;
 	color: black;
+	
 
 	}
 
 	.tags {
-	width: 78%;
+	width: 120%;
 	background-color: white;
+	border-radius: 4px;
 		
 	}
 
 	.blogpage {
 	position: relative;
-	left: 37em;
+	left: 31.5em;
 	text-decoration: none;
 	color: black;
 	}
@@ -129,6 +143,7 @@ tbody {
 	font-size: 270%;
 	}
 
+	
 	.title-font, .author-font, .content-font, .tags-font {
 	font-size: 120%;
 		
@@ -147,14 +162,7 @@ tbody {
 		border-radius: 4px;
 	}
 
-	.tags {
-		border-radius: 4px;
-	}
-
-
-
-
-
+	
 
 
 
