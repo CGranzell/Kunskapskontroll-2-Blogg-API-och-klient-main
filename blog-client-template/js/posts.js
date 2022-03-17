@@ -33,7 +33,7 @@ async function showPosts() {
                }
            </p>
           <p><strong>tags:</strong>${post.tags}</p>
-          <p>${post.content.substring(0, 100) + "..."} 
+          <p>${post.content.substring(0, 100) + "..."}
             <a href="post.html?id=${post._id}
             &title=${post.title}
             &content=${post.content}
