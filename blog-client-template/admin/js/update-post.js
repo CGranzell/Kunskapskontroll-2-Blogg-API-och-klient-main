@@ -18,7 +18,7 @@ window.onload = async function () {
 	try {
 		const response = await fetch(`http://localhost:5000/posts/${blogId}`); //ID för inlägget, t.ex.: 6229f059f1d1df664039fdd1
 		const post = await response.json();
-		//	console.log(post);
+		
 
 		title.value = post.title; //title refererar här till title när man loggar - inte 'let title'
 		//	console.log(post.title); //Visar titeln (Man får ut samma värde, men har olika tillvägagångssätt: title.value = post.title)
@@ -44,7 +44,7 @@ const form = document.getElementById('update-post');
 
 // Update the blog
 form.addEventListener('submit', async function (e) {
-	e.preventDefault(); //e-target är i det här fallet kopplat till formuläret
+	e.preventDefault(); 
 
 	// Get updated inputs value
 	let updatedtitle = e.target['title'].value;
