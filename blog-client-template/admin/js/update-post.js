@@ -3,13 +3,7 @@
 let title = document.querySelector('#title');
 let author = document.querySelector('#author');
 let content = document.querySelector('#content');
-let tags = document.querySelector('.tags');
-let tagsLabel = document.querySelector('.tags-font');
 let errorHandler = document.querySelector('.errorHandler');
-
-
-// Hide label for tags by default
-tagsLabel.style.display = 'none';
 
 // Get blog id and make it available globally
 // So that we can use it easily
@@ -24,38 +18,21 @@ window.onload = async function () {
 	try {
 		const response = await fetch(`http://localhost:5000/posts/${blogId}`); //ID för inlägget, t.ex.: 6229f059f1d1df664039fdd1
 		const post = await response.json();
-		console.log(post);
+		//	console.log(post);
 
 		title.value = post.title; //title refererar här till title när man loggar - inte 'let title'
-		console.log(post.title); //Visar titeln (Man får ut samma värde, men har olika tillvägagångssätt: title.value = post.title)
+		//	console.log(post.title); //Visar titeln (Man får ut samma värde, men har olika tillvägagångssätt: title.value = post.title)
 		author.value = post.author;
 		content.value = post.content;
 		let checked = post.tags;
 
-		if (checked) {
-			checked.map((item) => {
-				// Since the tags are changing, we create new elements and show them in the page
-				let container = document.createElement('li');
-				let inp = document.createElement('input');
-				let lab = document.createElement('label');
-				let brea = document.createElement('br');
+		let inputs = document.getElementsByName(['tag']);
 
-				container.style.listStyle = 'none';
-				container.style.padding = '.3rem';
-				inp.type = 'checkbox';
-				inp.value = item;
-				inp.name = 'tag';
-				inp.checked = true;
-				lab.textContent = item;
-
-				tagsLabel.style.display = 'block';
-				container.appendChild(inp);
-				container.appendChild(lab);
-				container.appendChild(brea);
-
-				tags.appendChild(container);
-			});
-		}
+		inputs.forEach((item) => {
+			// Check if tags from dB match with the tags from the HTML
+			// If true, checkbox will be checked
+			if (checked.includes(item.value)) item.checked = true;
+		});
 	} catch (error) {
 		// Shows errors in the page
 		errorHandler.textContent = error;
@@ -63,7 +40,6 @@ window.onload = async function () {
 };
 
 // Get the form
-
 const form = document.getElementById('update-post');
 
 // Update the blog
